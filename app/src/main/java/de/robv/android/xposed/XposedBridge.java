@@ -282,6 +282,8 @@ public final class XposedBridge {
 			Object thisObject, Object[] args) throws Throwable {
 		AdditionalHookInfo additionalInfo = (AdditionalHookInfo) additionalInfoObj;
 
+    Log.i(TAG, "className " + method.getClass().getName() + " , methodName " + method.getName());
+
 		if (disableHooks) {
 			try {
 				return invokeOriginalMethodNative(method, originalMethodId, additionalInfo.parameterTypes,
